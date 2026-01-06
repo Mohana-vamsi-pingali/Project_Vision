@@ -1,0 +1,12 @@
+__pycache__
+*.pyc
+.env
+.venv
+.git
+.gitignore
+.dockerignore
+Dockerfile
+trigger_test.txt
+verify_auto_trigger.py
+*.md
+tests/

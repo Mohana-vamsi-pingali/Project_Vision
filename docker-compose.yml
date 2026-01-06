@@ -1,0 +1,21 @@
+version: "3.9"
+
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    container_name: project-vision-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: project_vision
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5434:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./backend/db/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+
+volumes:
+  pgdata:
+    driver: local
+
