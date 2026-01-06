@@ -1,0 +1,13 @@
+steps:
+  - name: "gcr.io/cloud-builders/docker"
+    args:
+      [
+        "build",
+        "-t",
+        "us-central1-docker.pkg.dev/project-vision-483404/vision-repo/frontend:latest",
+        "--build-arg",
+        "VITE_API_URL=${_VITE_API_URL}",
+        "."
+      ]
+images:
+  - "us-central1-docker.pkg.dev/project-vision-483404/vision-repo/frontend:latest"
